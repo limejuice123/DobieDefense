@@ -27,7 +27,7 @@ public class PrepImageCycle : MonoBehaviour
 
 	void NextItem ()
 	{
-		if (CycleNumber <= ArrayOfSprites.Length)
+		if (CycleNumber < ArrayOfSprites.Length - 1)
 			CycleNumber++;
 		else
 			CycleNumber = 0;
