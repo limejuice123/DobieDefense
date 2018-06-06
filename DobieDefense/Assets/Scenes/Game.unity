@@ -140,34 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc85896f86a9f345a02a02c58d2799d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  objectToPool: {fileID: 1694528169}
-  amountToPool: 25
 --- !u!4 &3597081
 Transform:
   m_ObjectHideFlags: 0
@@ -527,10 +499,10 @@ GameObject:
   - component: {fileID: 632813838}
   - component: {fileID: 632813840}
   - component: {fileID: 632813839}
-  - component: {fileID: 632813841}
   - component: {fileID: 632813842}
+  - component: {fileID: 632813843}
   m_Layer: 0
-  m_Name: InitialBark
+  m_Name: Bark
   m_TagString: Bark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -618,26 +590,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!50 &632813841
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 632813837}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &632813842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,7 +598,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 632813837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8f235f8f65f746b138319668587d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 88d438bc620fd57498f8474811ccb93b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BarkSpeed: 5
+--- !u!114 &632813843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 632813837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c177e7a552b43143a0349b9b8dbcbe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &735296754
@@ -715,6 +679,7 @@ GameObject:
   - component: {fileID: 957835823}
   - component: {fileID: 957835822}
   - component: {fileID: 957835824}
+  - component: {fileID: 957835825}
   m_Layer: 0
   m_Name: Sasha
   m_TagString: Untagged
@@ -802,7 +767,21 @@ MonoBehaviour:
   VomitImage: {fileID: 0}
   HealthText: {fileID: 0}
   TreatText: {fileID: 0}
-  InitialBark: {fileID: 0}
+--- !u!114 &957835825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 957835821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5403f5db3e1dfc49a19580c9ba6c9cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bark: {fileID: 632813837}
+  BarkSpeed: 1
+  AboveButtons: {fileID: 622916293}
+  PooledBarks: 250
 --- !u!1 &1081764657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,10 +1070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb32254ac5faed4fb2dd6d6dbd06211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyMoveSpeed: -0.03
-  EnemyHealth: 0
-  Barricade: {fileID: 0}
-  Global: {fileID: 0}
 --- !u!1 &1720514140
 GameObject:
   m_ObjectHideFlags: 0

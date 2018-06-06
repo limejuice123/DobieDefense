@@ -1,8 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\MovementAndWeapons.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\BarkPool.cs">
     <Files>
       <File FileName="Assets\Scripts\Gameplay\MovementAndWeapons.cs" Line="81" Column="5" />
+      <File FileName="Assets\Scripts\Gameplay\BarkMove.cs" Line="12" Column="58" />
+      <File FileName="Assets\Scripts\Gameplay\BarkPool.cs" Line="13" Column="24" />
+      <File FileName="Assets\Scripts\Gameplay\BarkDestroy.cs" Line="9" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
