@@ -15,6 +15,8 @@ public class MovementAndWeapons : MonoBehaviour
 	public Transform RightBoundary;
 	public Image FartImage;
 	public Image VomitImage;
+	public Text HealthText;
+	public Text TreatText;
 
 	void Start () 
 	{
@@ -26,6 +28,8 @@ public class MovementAndWeapons : MonoBehaviour
 		RightBoundary = GameObject.Find ("RightBoundary").GetComponent<Transform> ();
 		FartImage = GameObject.Find ("FartImage").GetComponent<Image> ();
 		VomitImage = GameObject.Find ("VomitImage").GetComponent<Image> ();
+		HealthText = GameObject.Find ("HealthAmount").GetComponent<Text> ();
+		TreatText = GameObject.Find ("TreatsAmount").GetComponent<Text> ();
 
 		if (Global.FartPurchased == false) 
 		{
@@ -57,6 +61,25 @@ public class MovementAndWeapons : MonoBehaviour
 
 			if (pos.x < CentrePoint.position.x && pos.y > AboveButtons.position.y)
 				Sasha.Translate (0, MovementSpeed * Time.deltaTime, 0);
+
+			if (pos.y < AboveButtons.position.y) 
+			{
+				
+			}
+		}
+
+		if (Input.GetKey("a"))
+			Sasha.Translate (0, MovementSpeed * Time.deltaTime, 0);
+
+		if (Input.GetKey ("d"))
+			Sasha.Translate (0, -MovementSpeed * Time.deltaTime, 0);
+
+		if (Input.GetKey ("space")) 
+		{
+			if (Global.LaserEyesPurchased == false) 
+			{
+				
+			}
 		}
 
 		if (Sasha.position.x < LeftBoundary.position.x)
@@ -64,5 +87,8 @@ public class MovementAndWeapons : MonoBehaviour
 
 		if (Sasha.position.x > RightBoundary.position.x)
 			Sasha.position = new Vector2(3.34f, -2.49f);
+
+		HealthText.text = "= " + Global.Health.ToString ();
+		TreatText.text = "= " + Global.Treats.ToString ();
 	}
 }

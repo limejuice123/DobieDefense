@@ -6,6 +6,7 @@ public class GlobalVariables : MonoBehaviour
 {
 	public int Treats;
 	public int Health;
+	public int CurrentLevel;
 	public bool LaserEyesPurchased;
 	public bool VomitPurchased;
 	public bool FartPurchased;
@@ -15,6 +16,7 @@ public class GlobalVariables : MonoBehaviour
 		DontDestroyOnLoad (this);
 		Health = 100;
 		Treats = 0;
+		CurrentLevel = 0;
 		LaserEyesPurchased = false;
 		VomitPurchased = false;
 		FartPurchased = false;
