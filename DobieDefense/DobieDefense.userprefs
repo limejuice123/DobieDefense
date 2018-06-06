@@ -1,11 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\BarkPool.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\CatLife.cs">
     <Files>
-      <File FileName="Assets\Scripts\Gameplay\MovementAndWeapons.cs" Line="81" Column="5" />
-      <File FileName="Assets\Scripts\Gameplay\BarkMove.cs" Line="12" Column="58" />
-      <File FileName="Assets\Scripts\Gameplay\BarkPool.cs" Line="13" Column="24" />
-      <File FileName="Assets\Scripts\Gameplay\BarkDestroy.cs" Line="9" Column="23" />
+      <File FileName="Assets\Scripts\Gameplay\MovementAndWeapons.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay\BarkPool.cs" Line="49" Column="4" />
+      <File FileName="Assets\Scripts\Gameplay\CatSpawn.cs" Line="42" Column="103" />
+      <File FileName="Assets\Scripts\Gameplay\GlobalVariables.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay\CatMove.cs" Line="14" Column="2" />
+      <File FileName="Assets\Scripts\Gameplay\CatLife.cs" Line="14" Column="72" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

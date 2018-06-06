@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BarkPool : MonoBehaviour 
 {
+	public GlobalVariables Global;
+
 	public GameObject Bark;
 	[Range(0, 10)]
 	public float BarkSpeed;
@@ -15,6 +17,7 @@ public class BarkPool : MonoBehaviour
 
 	void Start () 
 	{
+		Global = GameObject.Find ("GlobalVariables").GetComponent<GlobalVariables> ();
 		ListOfBarks = new List<GameObject> ();
 		for (int i = 0; i < PooledBarks; i++) 
 		{
@@ -26,7 +29,7 @@ public class BarkPool : MonoBehaviour
 
 	void Update ()
 	{
-		if (Input.touchCount == 1) 
+		if (Input.touchCount == 1 && Global.LaserEyesPurchased == false) 
 		{
 			var pos = Camera.main.ScreenToWorldPoint (Input.GetTouch (0).position);
 
@@ -45,7 +48,7 @@ public class BarkPool : MonoBehaviour
 			}
 		}
 
-		if (Input.GetKey ("space")) 
+		if (Input.GetKey ("space") && Global.LaserEyesPurchased == false) 
 		{
 			for (int i = 0; i < ListOfBarks.Count; i++) 
 			{
