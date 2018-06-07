@@ -56,7 +56,9 @@
      <Compile Include="Assets\Scripts\Gameplay\BarkPool.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CatLife.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CatMove.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\CatPool.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CatSpawn.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\GameTimer.cs" />
      <Compile Include="Assets\Scripts\Gameplay\GlobalVariables.cs" />
      <Compile Include="Assets\Scripts\Gameplay\MovementAndWeapons.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PrepDisplay.cs" />

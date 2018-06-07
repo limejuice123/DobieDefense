@@ -22,5 +22,16 @@ public class CatLife : MonoBehaviour
 			Global.Health = Global.Health - 5;
 			Destroy (this.gameObject);
 		}
+
+		if (CatHealth <= 0)
+			Destroy (this.gameObject);
+	}
+
+	void OnCollisionEnter2D (Collision2D other)
+	{
+		if (other.rigidbody.tag == "Bark") 
+		{
+			CatHealth--;
+		}
 	}
 }

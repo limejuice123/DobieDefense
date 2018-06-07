@@ -61,11 +61,6 @@ public class MovementAndWeapons : MonoBehaviour
 
 			if (pos.x < CentrePoint.position.x && pos.y > AboveButtons.position.y)
 				Sasha.Translate (0, MovementSpeed * Time.deltaTime, 0);
-
-			if (pos.y < AboveButtons.position.y) 
-			{
-				
-			}
 		}
 
 		if (Input.GetKey("a"))
@@ -73,14 +68,6 @@ public class MovementAndWeapons : MonoBehaviour
 
 		if (Input.GetKey ("d"))
 			Sasha.Translate (0, -MovementSpeed * Time.deltaTime, 0);
-
-		if (Input.GetKey ("space")) 
-		{
-			if (Global.LaserEyesPurchased == false) 
-			{
-				
-			}
-		}
 
 		if (Sasha.position.x < LeftBoundary.position.x)
 			Sasha.position = new Vector2(-3.34f, -2.49f);
