@@ -14,11 +14,10 @@ public class GameTimer : MonoBehaviour
 		
 	void Update()
 	{
-		timer = Time.time;
+		timer = Time.timeSinceLevelLoad;
 
 		if (timer >= 30f) 
 		{
-			timer = 0;
 			Initiate.Fade ("DayPrep", Color.black, 2);
 		}
 	}
