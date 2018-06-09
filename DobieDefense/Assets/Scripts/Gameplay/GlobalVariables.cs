@@ -50,4 +50,10 @@ public class GlobalVariables : MonoBehaviour
 	{
 		SceneManager.sceneLoaded -= OnSceneLoaded;
 	}
+
+	void Update()
+	{
+		if (Health <= 0)
+			Initiate.Fade ("GameOver", Color.black, 2);
+	}
 }

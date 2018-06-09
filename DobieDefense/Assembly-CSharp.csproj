@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Gameplay\MovementAndWeapons.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PrepDisplay.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PrepImageCycle.cs" />
+     <Compile Include="Assets\Scripts\Navigation\BackToMenu.cs" />
      <Compile Include="Assets\Scripts\Navigation\FinishAndPlay.cs" />
      <Compile Include="Assets\Scripts\Navigation\NextPage.cs" />
      <Compile Include="Assets\Scripts\Navigation\PressPlay.cs" />

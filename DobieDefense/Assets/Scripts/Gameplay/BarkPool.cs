@@ -13,10 +13,13 @@ public class BarkPool : MonoBehaviour
 	public Transform AboveButtons;
 
 	public int PooledBarks;
+	public bool canFire;
+	public bool isCoroutineStarted;
 	List<GameObject> ListOfBarks;
 
 	void Start () 
 	{
+		canFire = true;
 		Global = GameObject.Find ("GlobalVariables").GetComponent<GlobalVariables> ();
 		ListOfBarks = new List<GameObject> ();
 		for (int i = 0; i < PooledBarks; i++) 
@@ -29,7 +32,7 @@ public class BarkPool : MonoBehaviour
 
 	void Update ()
 	{
-		if (Input.touchCount == 1 && Global.LaserEyesPurchased == false) 
+		if (Input.touchCount == 1 && Global.LaserEyesPurchased == false && canFire == true) 
 		{
 			var pos = Camera.main.ScreenToWorldPoint (Input.GetTouch (0).position);
 
@@ -42,13 +45,14 @@ public class BarkPool : MonoBehaviour
 						ListOfBarks [i].transform.position = transform.position;
 						ListOfBarks [i].transform.rotation = transform.rotation;
 						ListOfBarks [i].SetActive (true);
+						canFire = false;
 						break;
 					}
 				}
 			}
 		}
 
-		if (Input.GetKey ("space") && Global.LaserEyesPurchased == false) 
+		if (Input.GetKey ("space") && Global.LaserEyesPurchased == false && canFire == true) 
 		{
 			for (int i = 0; i < ListOfBarks.Count; i++) 
 			{
@@ -57,9 +61,23 @@ public class BarkPool : MonoBehaviour
 					ListOfBarks [i].transform.position = transform.position;
 					ListOfBarks [i].transform.rotation = transform.rotation;
 					ListOfBarks [i].SetActive (true);
+					canFire = false;
 					break;
 				}
 			}
 		}
+
+		if (canFire == false && isCoroutineStarted == false) 
+		{
+			StartCoroutine (ResetFire ());
+			isCoroutineStarted = true;
+		}
+	}
+
+	IEnumerator ResetFire()
+	{
+		yield return new WaitForSeconds (0.25f);
+		canFire = true;
+		isCoroutineStarted = false;
 	}
 }
