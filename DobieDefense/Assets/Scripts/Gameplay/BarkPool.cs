@@ -11,6 +11,8 @@ public class BarkPool : MonoBehaviour
 	public float BarkSpeed;
 
 	public Transform AboveButtons;
+	public Transform BarkBoundaryRight;
+	public Transform BarkBoundaryLeft;
 
 	public int PooledBarks;
 	public bool canFire;
@@ -36,7 +38,7 @@ public class BarkPool : MonoBehaviour
 		{
 			var pos = Camera.main.ScreenToWorldPoint (Input.GetTouch (0).position);
 
-			if (pos.y < AboveButtons.position.y) 
+			if (pos.y < AboveButtons.position.y && pos.x > BarkBoundaryLeft.position.x && pos.x < BarkBoundaryRight.position.x) 
 			{
 				for (int i = 0; i < ListOfBarks.Count; i++) 
 				{

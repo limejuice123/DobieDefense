@@ -13,8 +13,8 @@ public class MovementAndWeapons : MonoBehaviour
 	public Transform AboveButtons;
 	public Transform LeftBoundary;
 	public Transform RightBoundary;
+	public SpriteRenderer FartButton;
 	public Image FartImage;
-	public Image VomitImage;
 	public Text HealthText;
 	public Text TreatText;
 
@@ -26,27 +26,20 @@ public class MovementAndWeapons : MonoBehaviour
 		AboveButtons = GameObject.Find ("AboveButtons").GetComponent<Transform> ();
 		LeftBoundary = GameObject.Find ("LeftBoundary").GetComponent<Transform> ();
 		RightBoundary = GameObject.Find ("RightBoundary").GetComponent<Transform> ();
+		FartButton = GameObject.Find ("FartButton").GetComponent<SpriteRenderer> ();
 		FartImage = GameObject.Find ("FartImage").GetComponent<Image> ();
-		VomitImage = GameObject.Find ("VomitImage").GetComponent<Image> ();
 		HealthText = GameObject.Find ("HealthAmount").GetComponent<Text> ();
 		TreatText = GameObject.Find ("TreatsAmount").GetComponent<Text> ();
 
 		if (Global.FartPurchased == false) 
 		{
 			FartImage.enabled = false;
+			FartButton.enabled = false;
 		} 
 		else 
 		{
 			FartImage.enabled = true;
-		}
-
-		if (Global.VomitPurchased == false) 
-		{
-			VomitImage.enabled = false;
-		} 
-		else 
-		{
-			VomitImage.enabled = true;
+			FartButton.enabled = true;
 		}
 	}
 

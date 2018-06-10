@@ -11,7 +11,6 @@ public class GlobalVariables : MonoBehaviour
 	public int Health;
 	public int CurrentLevel;
 	public bool LaserEyesPurchased;
-	public bool VomitPurchased;
 	public bool FartPurchased;
 
 	void Awake()
@@ -28,10 +27,9 @@ public class GlobalVariables : MonoBehaviour
 	void Start ()
 	{
 		Health = 100;
-		Treats = 0;
+		Treats = 999;
 		CurrentLevel = 0;
 		LaserEyesPurchased = false;
-		VomitPurchased = false;
 		FartPurchased = false;
 	}
 

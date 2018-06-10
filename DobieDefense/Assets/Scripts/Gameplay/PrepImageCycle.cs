@@ -38,6 +38,6 @@ public class PrepImageCycle : MonoBehaviour
 		if (CycleNumber > 0)
 			CycleNumber--;
 		else
-			CycleNumber = ArrayOfSprites.Length;
+			CycleNumber = 3;
 	}
 }

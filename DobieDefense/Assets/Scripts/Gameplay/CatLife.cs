@@ -23,8 +23,11 @@ public class CatLife : MonoBehaviour
 			Destroy (this.gameObject);
 		}
 
-		if (CatHealth <= 0)
+		if (CatHealth <= 0) 
+		{
+			Global.Treats = Global.Treats + 3;
 			Destroy (this.gameObject);
+		}
 	}
 
 	void OnCollisionEnter2D (Collision2D other)
@@ -32,6 +35,11 @@ public class CatLife : MonoBehaviour
 		if (other.rigidbody.tag == "Bark") 
 		{
 			CatHealth--;
+		}
+
+		if (other.rigidbody.tag == "Vomit") 
+		{
+			Destroy (this.gameObject);
 		}
 	}
 }
