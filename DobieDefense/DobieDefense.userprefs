@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\Fart.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\MovementAndWeapons.cs">
     <Files>
-      <File FileName="Assets\Scripts\Gameplay\Fart.cs" Line="37" Column="31" />
       <File FileName="Assets\Scripts\Gameplay\GlobalVariables.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay\PrepImageCycle.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay\PrepDisplay.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Gameplay\MovementAndWeapons.cs" Line="17" Column="25" />
+      <File FileName="Assets\Scripts\Gameplay\LaserScript.cs" Line="49" Column="28" />
+      <File FileName="Assets\Scripts\Gameplay\BarkPool.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay\CatLife.cs" Line="42" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

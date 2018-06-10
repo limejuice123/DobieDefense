@@ -37,7 +37,7 @@ public class CatLife : MonoBehaviour
 			CatHealth--;
 		}
 
-		if (other.rigidbody.tag == "Vomit") 
+		if (other.rigidbody.tag == "Laser") 
 		{
 			Destroy (this.gameObject);
 		}
