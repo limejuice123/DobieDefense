@@ -12,6 +12,7 @@ public class GlobalVariables : MonoBehaviour
 	public int CurrentLevel;
 	public bool LaserEyesPurchased;
 	public bool FartPurchased;
+	public bool isGameOver;
 
 	void Awake()
 	{
@@ -27,10 +28,11 @@ public class GlobalVariables : MonoBehaviour
 	void Start ()
 	{
 		Health = 100;
-		Treats = 999;
+		Treats = 0;
 		CurrentLevel = 0;
 		LaserEyesPurchased = false;
 		FartPurchased = false;
+		isGameOver = false;
 	}
 
 	void OnEnable()
@@ -51,7 +53,10 @@ public class GlobalVariables : MonoBehaviour
 
 	void Update()
 	{
-		if (Health <= 0)
-			Initiate.Fade ("GameOver", Color.black, 2);
+		if (Health <= 0 && isGameOver == false) 
+		{
+			isGameOver = true;
+			Initiate.Fade ("GameOver", Color.black, 2f);
+		}
 	}
 }

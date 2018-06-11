@@ -13,12 +13,15 @@ public class NextPage : MonoBehaviour
 	public Text InstructionText;
 	public int PageCount;
 
+	public AudioSource source;
+
 	void Start () 
 	{
 		NextButton = GameObject.Find ("NextPage").GetComponent<Button> ();
 		BackButton = GameObject.Find ("BackPage").GetComponent<Button> ();
 		InstructionImage = GameObject.Find ("InstructionImage").GetComponent<Image> ();
 		InstructionText = GameObject.Find ("InstructionText").GetComponent<Text> ();
+		source = Camera.main.GetComponent<AudioSource> ();
 		NextButton.onClick.AddListener (GoToNextPage);
 		BackButton.onClick.AddListener (GoBackAPage);
 	}
@@ -52,6 +55,7 @@ public class NextPage : MonoBehaviour
 
 	void GoToNextPage () 
 	{
+		source.Play ();
 		if (PageCount < 4)
 			PageCount++;
 		else
@@ -60,6 +64,7 @@ public class NextPage : MonoBehaviour
 
 	void GoBackAPage ()
 	{
+		source.Play ();
 		if (PageCount > 0)
 			PageCount--;
 	}

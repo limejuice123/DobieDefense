@@ -8,10 +8,15 @@ public class CatLife : MonoBehaviour
 	public int CatHealth;
 	public GlobalVariables Global;
 
+	public AudioSource source;
+
 	void Start () 
 	{
 		Global = GameObject.Find ("GlobalVariables").GetComponent<GlobalVariables> ();
 		Barricade = GameObject.Find ("barricade").GetComponent<Transform> ();
+		source = Camera.main.GetComponent<AudioSource> ();
+		source.clip = Resources.Load ("Hit") as AudioClip;
+		source.volume = 0.3f;
 		CatHealth = 5;
 	}
 
@@ -26,6 +31,7 @@ public class CatLife : MonoBehaviour
 		if (CatHealth <= 0) 
 		{
 			Global.Treats = Global.Treats + 3;
+			source.Play ();
 			Destroy (this.gameObject);
 		}
 	}
@@ -39,6 +45,7 @@ public class CatLife : MonoBehaviour
 
 		if (other.rigidbody.tag == "Laser") 
 		{
+			Global.Treats = Global.Treats + 3;
 			Destroy (this.gameObject);
 		}
 	}

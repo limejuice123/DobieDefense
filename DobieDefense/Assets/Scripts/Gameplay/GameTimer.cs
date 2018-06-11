@@ -16,7 +16,7 @@ public class GameTimer : MonoBehaviour
 	{
 		timer = Time.timeSinceLevelLoad;
 
-		if (timer >= 30f) 
+		if (timer >= 47f) 
 		{
 			Initiate.Fade ("DayPrep", Color.black, 2);
 		}

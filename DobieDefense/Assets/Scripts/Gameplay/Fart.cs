@@ -10,12 +10,15 @@ public class Fart : MonoBehaviour
 	public Transform BarkBoundaryRight;
 	public Image FartImage;
 
+	public AudioSource source;
+
 	void Start ()
 	{
 		Global = GameObject.Find ("GlobalVariables").GetComponent<GlobalVariables> ();
 		AboveButtons = GameObject.Find ("AboveButtons").GetComponent<Transform> ();
 		BarkBoundaryRight = GameObject.Find ("BarkBoundaryRight").GetComponent<Transform> ();
 		FartImage = GameObject.Find ("FartImage").GetComponent<Image> ();
+		source = gameObject.GetComponent<AudioSource> ();
 	}
 
 	void Update () 
@@ -27,6 +30,8 @@ public class Fart : MonoBehaviour
 			if (Global.FartPurchased == true && pos.x > BarkBoundaryRight.position.x && pos.y < AboveButtons.position.y) 
 			{
 				var Cats = GameObject.FindGameObjectsWithTag ("Cat");
+
+				source.Play ();
 
 				foreach (GameObject Item in Cats) 
 				{
@@ -44,12 +49,15 @@ public class Fart : MonoBehaviour
 			{
 				var Cats = GameObject.FindGameObjectsWithTag ("Cat");
 
+				source.Play ();
+
 				foreach (GameObject Item in Cats) 
 				{
 					Destroy (Item);
 				}
 
 				Global.FartPurchased = false;
+				FartImage.enabled = false;
 			}	
 		}
 	}

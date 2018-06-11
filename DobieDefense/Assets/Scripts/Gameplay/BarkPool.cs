@@ -19,8 +19,12 @@ public class BarkPool : MonoBehaviour
 	public bool isCoroutineStarted;
 	List<GameObject> ListOfBarks;
 
+	public AudioSource source;
+
 	void Start () 
 	{
+		source = GameObject.Find ("Sasha").GetComponent<AudioSource> ();
+		source.clip = Resources.Load ("Bork") as AudioClip;
 		canFire = true;
 		Global = GameObject.Find ("GlobalVariables").GetComponent<GlobalVariables> ();
 		ListOfBarks = new List<GameObject> ();
@@ -47,6 +51,7 @@ public class BarkPool : MonoBehaviour
 						ListOfBarks [i].transform.position = transform.position;
 						ListOfBarks [i].transform.rotation = transform.rotation;
 						ListOfBarks [i].SetActive (true);
+						source.Play ();
 						canFire = false;
 						break;
 					}
@@ -63,6 +68,7 @@ public class BarkPool : MonoBehaviour
 					ListOfBarks [i].transform.position = transform.position;
 					ListOfBarks [i].transform.rotation = transform.rotation;
 					ListOfBarks [i].SetActive (true);
+					source.Play ();
 					canFire = false;
 					break;
 				}

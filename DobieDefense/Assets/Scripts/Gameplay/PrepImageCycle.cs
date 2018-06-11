@@ -11,11 +11,14 @@ public class PrepImageCycle : MonoBehaviour
 	public Button Previous;
 	public int CycleNumber;
 
+	public AudioSource source;
+
 	void Start ()
 	{
 		Next = GameObject.Find ("Next").GetComponent<Button> ();
 		Previous = GameObject.Find ("Previous").GetComponent<Button> ();
 		ThingToBuy = GameObject.Find ("ThingToBuy").GetComponent<Image> ();
+		source = gameObject.GetComponent<AudioSource> ();
 		Next.onClick.AddListener (NextItem);
 		Previous.onClick.AddListener (PreviousItem);
 	}
@@ -27,6 +30,7 @@ public class PrepImageCycle : MonoBehaviour
 
 	void NextItem ()
 	{
+		source.Play ();
 		if (CycleNumber < ArrayOfSprites.Length - 1)
 			CycleNumber++;
 		else
@@ -35,6 +39,7 @@ public class PrepImageCycle : MonoBehaviour
 
 	void PreviousItem ()
 	{
+		source.Play ();
 		if (CycleNumber > 0)
 			CycleNumber--;
 		else
